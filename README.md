@@ -1,4 +1,4 @@
 # Satalica
 
 - Igra za djecu
-- Cilj je naučiti djecu na SAT
+- Cilj: učenje djece koliko je sati
