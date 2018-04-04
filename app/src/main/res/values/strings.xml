@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Satalica</string>
+    <string name="start_game">Započni igru</string>
+    <string name="results">Rezultati</string>
+    <string name="content_desc">Background image</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="user_name">Korisničko ime</string>
+    <string name="go_game">Kreni</string>
 </resources>
