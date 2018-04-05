@@ -12,11 +12,10 @@
     <TimePicker
         android:id="@+id/analogClock"
         android:layout_width="377dp"
-        android:layout_height="323dp"
+        android:layout_height="355dp"
         android:descendantFocusability="blocksDescendants"
         android:timePickerMode="clock"
-        tools:layout_editor_absoluteX="-13dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="0dp" />
 
     <Button
         android:id="@+id/answerOneBtn"
