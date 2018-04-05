@@ -1,10 +1,12 @@
-package tvz.android.satalica;
+package tvz.android.satalica.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import tvz.android.satalica.R;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -15,7 +17,7 @@ public class UserActivity extends AppCompatActivity {
     }
 
     public void startGame(View view) {
-        Intent intent = new Intent(this, Game.class);
+        Intent intent = new Intent(this, GameActivity.class);
         EditText inputField = findViewById(R.id.inputUserName);
         String username = inputField.getText().toString();
         intent.putExtra("username", username);
