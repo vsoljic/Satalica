@@ -20,4 +20,9 @@ public class MainActivity extends AppCompatActivity {
         // Button button = findViewById(R.id.startGameBtn);
         startActivity(intent);
     }
+
+    public void showResults(View view) {
+        Intent intent = new Intent(this, ResultsActivity.class);
+        startActivity(intent);
+    }
 }

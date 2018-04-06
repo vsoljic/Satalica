@@ -70,9 +70,9 @@ public class ClockView extends View {
         paint.setColor(getResources().getColor(android.R.color.black));
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.STROKE);
-        drawHand(canvas, (hour + minute / 60) * 5f, true);
+        Double hourAngle = (hour * 5d) + ((5d / 60) * minute);
+        drawHand(canvas, hourAngle, true);
         drawHand(canvas, minute, false);
-        drawHand(canvas, c.get(Calendar.SECOND), false);
     }
 
     public void setHour(int hour) {
