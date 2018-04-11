@@ -16,6 +16,38 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/newyear_clockbackground" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="29dp">
+
+        <ImageButton
+            android:id="@+id/hr"
+            android:layout_width="152dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:onClick="setLocale"
+            android:saveEnabled="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/hr"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="34dp" />
+
+        <ImageButton
+            android:id="@+id/eng"
+            android:layout_width="152dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:onClick="setLocale"
+            android:saveEnabled="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/eng"
+            tools:layout_editor_absoluteX="208dp"
+            tools:layout_editor_absoluteY="34dp" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/startGameBtn"
         style="@style/Widget.AppCompat.Button.Colored"
@@ -47,10 +79,10 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:onClick="showResults"
         android:text="@string/results"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:onClick="showResults"
         app:layout_constraintBottom_toTopOf="@+id/tutorialBtn"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView" />
@@ -65,10 +97,10 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:onClick="startTutorial"
         android:text="@string/tutorial"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:onClick="startTutorial"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">Satalica</string>
-    <string name="start_game">Započni igru</string>
-    <string name="results">Rezultati</string>
+    <string name="start_game">Start game</string>
+    <string name="results">Results</string>
     <string name="content_desc">Background image</string>
     <string name="tutorial">Tutorial</string>
-    <string name="user_name">Korisničko ime:</string>
-    <string name="go_game">Kreni</string>
-    <string name="eg_text">Bravo, %1$s! Skupio si %2$d bodova!</string>
-    <string name="et_text">Uspješno si završio tutorial! Sad zaigraj igru :)</string>
-    <string name="back_to_menu">Natrag na izbornik</string>
-    <string name="game_size">Broj zadataka:</string>
+    <string name="user_name">Username:</string>
+    <string name="go_game">Go</string>
+    <string name="eg_text">Bravo, %1$s! You collected %2$d points!</string>
+    <string name="et_text">Youve successfully completed a tutorial! Now play a game :)</string>
+    <string name="back_to_menu">Backt to menu</string>
+    <string name="game_size">Number of tasks:</string>
+    <string name="set_time_on">Set time on:</string>
+    <string name="check">Check</string>
 
 </resources>

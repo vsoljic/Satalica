@@ -32,7 +32,7 @@
             android:id="@+id/timeLbl"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:text="Postavi vrijeme na:"
+            android:text="@string/set_time_on"
             android:gravity="center"
             android:textColor="@color/colorAccent"
             android:textSize="16dp" />
@@ -61,7 +61,7 @@
         android:layout_height="67dp"
         android:background="@color/colorAccent"
         android:onClick="checkIfTimeIsCorrect"
-        android:text="Provjeri"
+        android:text="@string/check"
         android:textColor="#fff"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"

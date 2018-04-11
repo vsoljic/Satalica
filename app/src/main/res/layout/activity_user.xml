@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:alpha="0.6"
-        android:contentDescription="@string/content_desc"
+        android:contentDescription= "@string/content_desc"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
