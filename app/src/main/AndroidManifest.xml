@@ -20,8 +20,10 @@
         <activity android:name=".activities.GameActivity" />
         <activity android:name=".activities.ResultsActivity" />
         <activity android:name=".activities.TutorialActivity" />
-        <activity android:name=".activities.PopupActivity" />
-        <activity android:name=".activities.EndGameActivity"></activity>
+        <activity android:name=".activities.PopupSuccessActivity" />
+        <activity android:name=".activities.EndGameActivity" />
+        <activity android:name=".activities.PopupFailureActivity" />
+        <activity android:name=".activities.EndTutorialActivity"></activity>
     </application>
 
 </manifest>

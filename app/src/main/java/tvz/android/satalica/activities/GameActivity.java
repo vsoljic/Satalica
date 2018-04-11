@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -30,13 +31,15 @@ public class GameActivity extends AppCompatActivity {
 
     int gameSize;
     int current;
-    int score = 0;
+    int countCorrectAnswer = 0;
     String username = "";
+    long startStopwatch = 0L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        startStopwatch = System.currentTimeMillis();
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
@@ -87,7 +90,7 @@ public class GameActivity extends AppCompatActivity {
 
         if (answer.equals(correctAnswer)) {
             button.setBackgroundResource(R.color.colorSuccess);
-            score = score + 10;
+            countCorrectAnswer = countCorrectAnswer + 1;
         } else {
             button.setBackgroundColor(Color.RED);
 
@@ -105,9 +108,21 @@ public class GameActivity extends AppCompatActivity {
                     decolorButtons();
                     enableButtons(true);
                 } else {
+                    long endStopwatch = System.currentTimeMillis();
+                    long elapsedTime = (endStopwatch - startStopwatch) / 1000;
+
+                    int countWrongAnswer = (gameSize - countCorrectAnswer);
+                    long finalScore;
+
+                    if (countWrongAnswer == 0) {
+                        finalScore = elapsedTime + countCorrectAnswer;
+                    } else {
+                        finalScore = elapsedTime + countCorrectAnswer / countWrongAnswer;
+                    }
+
                     Intent intent = new Intent(getApplicationContext(), EndGameActivity.class);
                     intent.putExtra("username", username);
-                    intent.putExtra("score", score);
+                    intent.putExtra("score", finalScore);
                     startActivity(intent);
                 }
             }

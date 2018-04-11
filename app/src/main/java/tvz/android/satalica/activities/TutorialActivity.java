@@ -1,14 +1,16 @@
 package tvz.android.satalica.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -20,9 +22,7 @@ public class TutorialActivity extends AppCompatActivity {
     TextView timeTextView;
     String randomTime;
     int tutorialSize;
-    PopupWindow popupWindow;
-    View popupView;
-
+    int current = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,34 +39,43 @@ public class TutorialActivity extends AppCompatActivity {
     }
 
     public void checkIfTimeIsCorrect(View view) {
+        enableButton(false);
         int selectedHour = timePicker.getHour();
         int selectedMinutes = timePicker.getMinute();
 
         String selectedTime = String.format(String.format("%02d", selectedHour) + ":" + String.format("%02d", selectedMinutes));
 
+        LayoutInflater inflater = getLayoutInflater();
+
         if (selectedTime.equals(randomTime)) {
-
-            popupWindow = new PopupWindow(popupView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            popupView = getLayoutInflater().inflate(R.layout.activity_popup, null);
-            popupWindow.showAtLocation(popupView, Gravity.CENTER, 0, 0);
-
+            showToast(inflater, R.layout.activity_popup_success);
         } else {
-
+            showToast(inflater, R.layout.activity_popup_failure);
         }
 
-
-       /* new Handler().postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (++current <= tutorialSize) {
                     setTimeLabel();
                     resetTimePicker();
+                    enableButton(true);
                 } else {
-                    //finish game
+                   Intent intent = new Intent(getApplicationContext(), EndTutorialActivity.class);
+                   startActivity(intent);
                 }
             }
-        }, 3000);*/
+        }, 2000);
 
+    }
+
+    private void showToast(LayoutInflater inflater, int activity_popup_failure) {
+        View layout = inflater.inflate(activity_popup_failure, null);
+        Toast toast = new Toast(this);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setView(layout);
+        toast.show();
     }
 
     private void setTimeLabel() {
@@ -76,15 +85,16 @@ public class TutorialActivity extends AppCompatActivity {
 
         randomTime = String.format("%02d", hour) + ":" + String.format("%02d", minutes);
         timeTextView.setText(randomTime);
-
     }
 
     private void resetTimePicker() {
-        timePicker.setHour(0);
         timePicker.setMinute(0);
+        timePicker.setHour(0);
     }
 
-    public void cancelPopup(View view) {
-        popupWindow.dismiss();
+    private void enableButton(boolean enabled) {
+        Button button = findViewById(R.id.checkTimeBtn);
+        button.setEnabled(enabled);
     }
+
 }
