@@ -1,5 +1,6 @@
 package tvz.android.satalica.activities;
 
+import android.arch.persistence.room.Room;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -9,7 +10,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.List;
+
 import tvz.android.satalica.R;
+import tvz.android.satalica.dao.AppDatabase;
+import tvz.android.satalica.model.User;
 
 public class ResultsActivity extends AppCompatActivity {
 
@@ -32,70 +37,52 @@ public class ResultsActivity extends AppCompatActivity {
         tableRowHeader.setLayoutParams( new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
 
         TextView labelNumber = new TextView(this);
-        labelNumber.setText("Redni broj");
-        labelNumber.setTextColor(Color.WHITE);
-        labelNumber.setPadding(0, 30, 0, 30);
-        labelNumber.setGravity(Gravity.CENTER);
-        labelNumber.setTextSize(20f);
-        labelNumber.setTypeface(labelNumber.getTypeface(), Typeface.BOLD);
+        makeTextView(labelNumber, "Redni broj", Color.WHITE, 20f);
 
         tableRowHeader.addView(labelNumber);
 
         TextView labelUsername = new TextView(this);
-        labelUsername.setText("Korisničko ime");
-        labelUsername.setTextColor(Color.WHITE);
-        labelUsername.setPadding(0, 30, 0, 30);
-        labelUsername.setGravity(Gravity.CENTER);
-        labelUsername.setTextSize(20f);
-        labelUsername.setTypeface(labelUsername.getTypeface(), Typeface.BOLD);
+        makeTextView(labelUsername, "Korisničko ime", Color.WHITE, 20f);
 
         tableRowHeader.addView(labelUsername);
 
         TextView labelScore = new TextView(this);
-        labelScore.setText("Bodovi");
-        labelScore.setTextColor(Color.WHITE);
-        labelScore.setPadding(0, 30, 0, 30);
-        labelScore.setGravity(Gravity.CENTER);
-        labelScore.setTextSize(20f);
-        labelScore.setTypeface(labelScore.getTypeface(), Typeface.BOLD);
+        makeTextView(labelScore, "Bodovi", Color.WHITE, 20f);
 
         tableRowHeader.addView(labelScore);
         tableLayout.addView(tableRowHeader, new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
     }
 
+    private void makeTextView(TextView labelNumber, String text,int color, Float textSize) {
+        labelNumber.setText(text);
+        labelNumber.setTextColor(color);
+        labelNumber.setPadding(0, 30, 0, 30);
+        labelNumber.setGravity(Gravity.CENTER);
+        labelNumber.setTextSize(textSize);
+        labelNumber.setTypeface(labelNumber.getTypeface(), Typeface.BOLD);
+    }
+
     private void populateRowData(TableLayout tableLayout) {
-        for(int i = 0; i < 10; i++) {
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+        List<User> all = db.userDao().getAll();
+
+        for (int i = 0; i < all.size(); i++) {
             TableRow tableRow = new TableRow(this);
             tableRow.setLayoutParams( new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
 
             TextView number = new TextView(this);
-            number.setText(Integer.toString(i+1));
-            number.setTextColor(Color.parseColor("#886ab5"));
-            number.setPadding(40, 40, 40, 40);
-            number.setGravity(Gravity.CENTER);
-            number.setTextSize(18f);
-            number.setTypeface(number.getTypeface(), Typeface.BOLD);
+            makeTextView(number, Integer.toString(i+1), Color.parseColor("#886ab5"), 18f);
             tableRow.addView(number);
 
             TextView username = new TextView(this);
-            username.setText("Vedrana"+i);
-            username.setTextColor(Color.parseColor("#886ab5"));
-            username.setPadding(40, 40, 40, 40);
-            username.setGravity(Gravity.CENTER);
-            username.setTypeface(username.getTypeface(), Typeface.BOLD);
-            username.setTextSize(18f);
-
+            makeTextView(username, all.get(i).getUsername(), Color.parseColor("#886ab5"), 18f);
             tableRow.addView(username);
 
             TextView score = new TextView(this);
-            score.setText(Integer.toString(10+i));
-            score.setTextColor(Color.parseColor("#886ab5"));
-            score.setPadding(40, 40, 40, 40);
-            score.setGravity(Gravity.CENTER);
-            score.setTypeface(score.getTypeface(), Typeface.BOLD);
-            score.setTextSize(18f);
-
+            makeTextView(score, String.valueOf(all.get(i).getScore()), Color.parseColor("#886ab5"), 18f);
             tableRow.addView(score);
+
             tableRow.setBackgroundResource(R.drawable.border);
             tableLayout.addView(tableRow);
         }

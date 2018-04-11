@@ -7,8 +7,6 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.Calendar;
-
 public class ClockView extends View {
 
     private int height, width = 0;
@@ -66,7 +64,6 @@ public class ClockView extends View {
     }
 
     private void drawHands(Canvas canvas) {
-        Calendar c = Calendar.getInstance();
         paint.setColor(getResources().getColor(android.R.color.black));
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.STROKE);
