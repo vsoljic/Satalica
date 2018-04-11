@@ -22,7 +22,7 @@ public class EndGameActivity extends AppCompatActivity {
         Resources resources = getResources();
         Intent intent = getIntent();
         String username = intent.getStringExtra("username");
-        int score = intent.getIntExtra("score", 0);
+        long score = intent.getLongExtra("score", 0L);
 
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "database-name").allowMainThreadQueries().build();
