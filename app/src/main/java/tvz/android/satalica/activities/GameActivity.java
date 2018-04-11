@@ -43,6 +43,7 @@ public class GameActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
+        gameSize = intent.getIntExtra("gameSize", 5);
 
         clockView = findViewById(R.id.clock);
         button1 = findViewById(R.id.answerOneBtn);
@@ -50,7 +51,6 @@ public class GameActivity extends AppCompatActivity {
         button3 = findViewById(R.id.answerThreeBtn);
         button4 = findViewById(R.id.answerFourBtn);
 
-        gameSize = 5;
         current = 0;
 
         setClock();

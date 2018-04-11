@@ -9,5 +9,6 @@
     <string name="eg_text">Bravo, %1$s! Skupio si %2$d bodova!</string>
     <string name="et_text">Uspješno si završio tutorial! Sad zaigraj igru :)</string>
     <string name="back_to_menu">Natrag na izbornik</string>
+    <string name="game_size">Broj zadataka:</string>
 
 </resources>
