@@ -25,9 +25,9 @@ public class EndGameActivity extends AppCompatActivity {
         long score = intent.getLongExtra("score", 0L);
 
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+                AppDatabase.class, "satalica").allowMainThreadQueries().build();
         User user = new User();
-        user.setScore((long) score);
+        user.setScore(score);
         user.setUsername(username);
         db.userDao().insertAll(user);
 

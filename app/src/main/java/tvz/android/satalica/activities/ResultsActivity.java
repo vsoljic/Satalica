@@ -53,18 +53,9 @@ public class ResultsActivity extends AppCompatActivity {
         tableLayout.addView(tableRowHeader, new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
     }
 
-    private void makeTextView(TextView labelNumber, String text,int color, Float textSize) {
-        labelNumber.setText(text);
-        labelNumber.setTextColor(color);
-        labelNumber.setPadding(0, 30, 0, 30);
-        labelNumber.setGravity(Gravity.CENTER);
-        labelNumber.setTextSize(textSize);
-        labelNumber.setTypeface(labelNumber.getTypeface(), Typeface.BOLD);
-    }
-
     private void populateRowData(TableLayout tableLayout) {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").allowMainThreadQueries().build();
+                AppDatabase.class, "satalica").allowMainThreadQueries().build();
         List<User> all = db.userDao().getAll();
 
         for (int i = 0; i < all.size(); i++) {
@@ -86,5 +77,14 @@ public class ResultsActivity extends AppCompatActivity {
             tableRow.setBackgroundResource(R.drawable.border);
             tableLayout.addView(tableRow);
         }
+    }
+
+    private void makeTextView(TextView labelNumber, String text,int color, Float textSize) {
+        labelNumber.setText(text);
+        labelNumber.setTextColor(color);
+        labelNumber.setPadding(0, 30, 0, 30);
+        labelNumber.setGravity(Gravity.CENTER);
+        labelNumber.setTextSize(textSize);
+        labelNumber.setTypeface(labelNumber.getTypeface(), Typeface.BOLD);
     }
 }
