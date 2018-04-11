@@ -56,7 +56,7 @@ public class TutorialActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (++current <= tutorialSize) {
+                if (++current < tutorialSize) {
                     setTimeLabel();
                     resetTimePicker();
                     enableButton(true);

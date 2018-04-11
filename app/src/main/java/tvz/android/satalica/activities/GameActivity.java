@@ -103,7 +103,7 @@ public class GameActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (++current <= gameSize) {
+                if (++current < gameSize) {
                     setClock();
                     decolorButtons();
                     enableButtons(true);
