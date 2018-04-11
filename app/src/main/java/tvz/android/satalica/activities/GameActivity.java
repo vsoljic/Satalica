@@ -1,5 +1,6 @@
 package tvz.android.satalica.activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,11 +30,16 @@ public class GameActivity extends AppCompatActivity {
 
     int gameSize;
     int current;
+    int score = 0;
+    String username = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
 
         clockView = findViewById(R.id.clock);
         button1 = findViewById(R.id.answerOneBtn);
@@ -80,7 +86,8 @@ public class GameActivity extends AppCompatActivity {
         enableButtons(false);
 
         if (answer.equals(correctAnswer)) {
-            button.setBackgroundColor(Color.GREEN);
+            button.setBackgroundResource(R.color.colorSuccess);
+            score = score + 10;
         } else {
             button.setBackgroundColor(Color.RED);
 
@@ -98,16 +105,19 @@ public class GameActivity extends AppCompatActivity {
                     decolorButtons();
                     enableButtons(true);
                 } else {
-                    //finish game
+                    Intent intent = new Intent(getApplicationContext(), EndGameActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("score", score);
+                    startActivity(intent);
                 }
             }
-        }, 1000);
+        }, 3000);
 
     }
 
     private void findCorrectAnswer(Button button) {
         if (button.getText().equals(correctAnswer)) {
-            button.setBackgroundColor(Color.GREEN);
+            button.setBackgroundResource(R.color.colorSuccess);
         }
     }
 
@@ -119,10 +129,10 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void decolorButtons() {
-        button1.setBackgroundColor(Color.parseColor("#886ab5"));
-        button2.setBackgroundColor(Color.parseColor("#886ab5"));
-        button3.setBackgroundColor(Color.parseColor("#886ab5"));
-        button4.setBackgroundColor(Color.parseColor("#886ab5"));
+        button1.setBackgroundResource(R.color.colorAccent);
+        button2.setBackgroundResource(R.color.colorAccent);
+        button3.setBackgroundResource(R.color.colorAccent);
+        button4.setBackgroundResource(R.color.colorAccent);
     }
 
 }

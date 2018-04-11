@@ -6,4 +6,5 @@
     <string name="tutorial">Tutorial</string>
     <string name="user_name">Korisničko ime:</string>
     <string name="go_game">Kreni</string>
+    <string name="eg_text">Bravo, %1$s! Skupio si %2$d bodova!</string>
 </resources>
