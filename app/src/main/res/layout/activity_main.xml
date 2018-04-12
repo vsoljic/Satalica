@@ -23,35 +23,39 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="92dp"
+            android:layout_height="44dp"
+            android:layout_gravity="end"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp">
 
             <ImageButton
                 android:id="@+id/hr"
-                android:layout_width="152dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="3dp"
                 android:layout_weight="1"
+                android:background="@color/colorPrimary"
                 android:contentDescription="@string/set_croatian_for_locale"
                 android:onClick="setLocale"
                 android:saveEnabled="false"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/hr"
+                app:srcCompat="@drawable/croatia_1"
                 tools:layout_editor_absoluteX="29dp"
                 tools:layout_editor_absoluteY="34dp" />
 
             <ImageButton
                 android:id="@+id/eng"
-                android:layout_width="152dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@color/colorPrimary"
                 android:contentDescription="@string/set_english_for_locale"
                 android:onClick="setLocale"
                 android:saveEnabled="false"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/eng"
+                app:srcCompat="@drawable/united_kingdom_1"
                 tools:layout_editor_absoluteX="208dp"
                 tools:layout_editor_absoluteY="34dp" />
 
@@ -62,6 +66,21 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/startGameBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:onClick="openChooseModePage"
+                android:text="@string/start_game"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/tutorialBtn"
@@ -93,20 +112,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/startGameBtn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:onClick="openUserPage"
-                android:text="@string/start_game"
-                android:textSize="18sp"
-                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>

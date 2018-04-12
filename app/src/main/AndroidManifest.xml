@@ -23,7 +23,8 @@
         <activity android:name=".activities.PopupSuccessActivity" />
         <activity android:name=".activities.EndGameActivity" />
         <activity android:name=".activities.PopupFailureActivity" />
-        <activity android:name=".activities.EndTutorialActivity"></activity>
+        <activity android:name=".activities.EndTutorialActivity" />
+        <activity android:name=".activities.ChooseModeActivity"></activity>
     </application>
 
 </manifest>

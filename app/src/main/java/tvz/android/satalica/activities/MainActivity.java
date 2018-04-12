@@ -18,9 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void openUserPage(View view) {
-        Intent intent = new Intent(this, UserActivity.class);
-        // Button button = findViewById(R.id.startGameBtn);
+    public void openChooseModePage(View view) {
+        Intent intent = new Intent(this, ChooseModeActivity.class);
         startActivity(intent);
     }
 
@@ -52,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
 
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
+        recreate();
     }
 }

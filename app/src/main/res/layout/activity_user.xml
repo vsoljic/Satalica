@@ -73,7 +73,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/labelGameScore"
+            android:id="@+id/labelGameSize"
             android:layout_width="328dp"
             android:layout_height="wrap_content"
             android:ems="10"

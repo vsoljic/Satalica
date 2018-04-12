@@ -14,5 +14,7 @@
     <string name="check">Check</string>
     <string name="set_croatian_for_locale">set Croatian for locale</string>
     <string name="set_english_for_locale">set English for locale</string>
+    <string name="competitive_mode">Competitive mode</string>
+    <string name="learning_mode">Learning mode</string>
 
 </resources>
