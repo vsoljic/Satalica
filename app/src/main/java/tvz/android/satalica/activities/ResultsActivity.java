@@ -10,6 +10,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import tvz.android.satalica.R;
@@ -37,17 +39,17 @@ public class ResultsActivity extends AppCompatActivity {
         tableRowHeader.setLayoutParams( new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
 
         TextView labelNumber = new TextView(this);
-        makeTextView(labelNumber, "Redni broj", Color.WHITE, 20f);
+        makeTextView(labelNumber, getString(R.string.order_number), Color.WHITE, 20f);
 
         tableRowHeader.addView(labelNumber);
 
         TextView labelUsername = new TextView(this);
-        makeTextView(labelUsername, "Korisničko ime", Color.WHITE, 20f);
+        makeTextView(labelUsername, getString(R.string.user_name_table), Color.WHITE, 20f);
 
         tableRowHeader.addView(labelUsername);
 
         TextView labelScore = new TextView(this);
-        makeTextView(labelScore, "Bodovi", Color.WHITE, 20f);
+        makeTextView(labelScore, getString(R.string.score), Color.WHITE, 20f);
 
         tableRowHeader.addView(labelScore);
         tableLayout.addView(tableRowHeader, new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
@@ -57,8 +59,14 @@ public class ResultsActivity extends AppCompatActivity {
         AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "satalica").allowMainThreadQueries().build();
         List<User> all = db.userDao().getAll();
+        Collections.sort(all, (o1, o2) -> o2.getScore().compareTo(o1.getScore()));
 
-        for (int i = 0; i < all.size(); i++) {
+        int displaySize = 10;
+        if (all.size() < 10) {
+            displaySize = all.size();
+        }
+
+        for (int i = 0; i < displaySize; i++) {
             TableRow tableRow = new TableRow(this);
             tableRow.setLayoutParams( new TableLayout.LayoutParams(0, TableLayout.LayoutParams.WRAP_CONTENT));
 

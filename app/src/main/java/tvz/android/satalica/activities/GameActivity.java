@@ -33,6 +33,7 @@ public class GameActivity extends AppCompatActivity {
     int countCorrectAnswer = 0;
     String username = "";
     long startStopwatch = 0L;
+    String mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,7 @@ public class GameActivity extends AppCompatActivity {
         Intent intent = getIntent();
         username = intent.getStringExtra("username");
         gameSize = intent.getIntExtra("gameSize", 5);
+        mode = intent.getStringExtra("mode");
 
         clockView = findViewById(R.id.clock);
         button1 = findViewById(R.id.answerOneBtn);
@@ -99,24 +101,24 @@ public class GameActivity extends AppCompatActivity {
             findCorrectAnswer(button4);
         }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (++current < gameSize) {
-                    setClock();
-                    decolorButtons();
-                    enableButtons(true);
-                } else {
-                    long endStopwatch = System.currentTimeMillis();
-                    long elapsedTime = (endStopwatch - startStopwatch) / 1000;
+        new Handler().postDelayed(() -> {
+            if (++current < gameSize) {
+                setClock();
+                decolorButtons();
+                enableButtons(true);
+            } else {
+                long endStopwatch = System.currentTimeMillis();
+                long elapsedTime = (endStopwatch - startStopwatch) / 1000;
 
-                    long finalScore = 300 - elapsedTime + (countCorrectAnswer * 20);
+                long finalScore = 300 - elapsedTime + (countCorrectAnswer * 20);
 
-                    Intent intent = new Intent(getApplicationContext(), EndGameActivity.class);
-                    intent.putExtra("username", username);
-                    intent.putExtra("score", finalScore);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(getApplicationContext(), EndGameActivity.class);
+                intent.putExtra("username", username);
+                intent.putExtra("score", finalScore);
+                intent.putExtra("mode", mode);
+                intent.putExtra("countCorrectAnswer", countCorrectAnswer);
+                intent.putExtra("gameSize", gameSize);
+                startActivity(intent);
             }
         }, 3000);
 

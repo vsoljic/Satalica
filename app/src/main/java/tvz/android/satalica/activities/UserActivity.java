@@ -15,6 +15,7 @@ import tvz.android.satalica.R;
 
 public class UserActivity extends AppCompatActivity {
     String gameSize;
+    String mode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,7 @@ public class UserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user);
 
         Intent intent = getIntent();
-        String mode = intent.getStringExtra("mode");
+        mode = intent.getStringExtra("mode");
 
         if ("competitive".matches(mode)) {
             TextView labelGameSize = findViewById(R.id.labelGameSize);
@@ -34,7 +35,6 @@ public class UserActivity extends AppCompatActivity {
             gameSize = Integer.toString(intent.getIntExtra("gameSize", 5));
         }
 
-
     }
 
     public void startGame(View view) {
@@ -42,7 +42,7 @@ public class UserActivity extends AppCompatActivity {
         EditText inputFieldUsername = findViewById(R.id.inputUserName);
         String username = inputFieldUsername.getText().toString();
 
-        if (gameSize.isEmpty() || gameSize.matches("")) {
+        if (gameSize == null) {
             EditText inputFieldGameSize = findViewById(R.id.inputGameSize);
             gameSize = inputFieldGameSize.getText().toString();
         }
@@ -61,6 +61,7 @@ public class UserActivity extends AppCompatActivity {
 
         intent.putExtra("username", username);
         intent.putExtra("gameSize", Integer.parseInt(gameSize));
+        intent.putExtra("mode", mode);
         startActivity(intent);
     }
 }

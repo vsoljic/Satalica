@@ -5,8 +5,10 @@
     <string name="content_desc">Background image</string>
     <string name="tutorial">Tutorial</string>
     <string name="user_name">Korisničko ime:</string>
+    <string name="user_name_table">Korisničko ime</string>
     <string name="go_game">Kreni</string>
     <string name="eg_text">Bravo, %1$s! Skupio si %2$d bodova!</string>
+    <string name="eg_text2">%1$s! Odgovorio si %2$s točno!</string>
     <string name="et_text">Uspješno si završio tutorial! Sad zaigraj igru :)</string>
     <string name="back_to_menu">Natrag na izbornik</string>
     <string name="game_size">Broj zadataka:</string>
@@ -16,5 +18,7 @@
     <string name="set_english_for_locale">Postavi engleski jezik</string>
     <string name="competitive_mode">Natjecateljski način</string>
     <string name="learning_mode">Način učenja</string>
+    <string name="order_number">Redni broj</string>
+    <string name="score">Bodovi</string>
 
 </resources>
