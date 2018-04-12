@@ -9,65 +9,61 @@
     tools:layout_editor_absoluteY="81dp">
 
 
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="360dp"
-        android:layout_height="362dp"
-        app:layout_constraintBottom_toTopOf="@+id/checkTimeBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="356dp"
-        android:layout_height="106dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/timePicker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:weightSum="100">
 
-        <TextView
-            android:id="@+id/timeLbl"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="@string/set_time_on"
-            android:gravity="center"
-            android:textColor="@color/colorAccent"
-            android:textSize="16dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/timeTextView"
+            <TextView
+                android:id="@+id/timeLbl"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:gravity="center"
+                android:text="@string/set_time_on"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:background="@drawable/border"
+                android:gravity="center"
+                android:text="12:00"
+                android:textColor="@color/colorAccent"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.504"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+        <TimePicker
+            android:id="@+id/timePicker"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:background="@drawable/border"
-            android:gravity="center"
-            android:text="12:00"
-            android:textColor="@color/colorAccent"
-            android:textSize="26dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="362dp"
+            android:layout_marginTop="10dp"/>
 
+        <Button
+            android:id="@+id/checkTimeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:background="@color/colorAccent"
+            android:onClick="checkIfTimeIsCorrect"
+            android:text="@string/check"
+            android:textColor="#fff"
+            android:textSize="16dp"/>
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/checkTimeBtn"
-        android:layout_width="359dp"
-        android:layout_height="67dp"
-        android:background="@color/colorAccent"
-        android:onClick="checkIfTimeIsCorrect"
-        android:text="@string/check"
-        android:textColor="#fff"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
 </android.support.constraint.ConstraintLayout>
