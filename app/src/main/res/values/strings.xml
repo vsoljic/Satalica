@@ -12,5 +12,7 @@
     <string name="game_size">Number of tasks:</string>
     <string name="set_time_on">Set time on:</string>
     <string name="check">Check</string>
+    <string name="set_croatian_for_locale">set Croatian for locale</string>
+    <string name="set_english_for_locale">set English for locale</string>
 
 </resources>

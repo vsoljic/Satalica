@@ -12,5 +12,7 @@
     <string name="game_size">Broj zadataka:</string>
     <string name="set_time_on">Postavi vrijeme na:</string>
     <string name="check">Provjeri</string>
+    <string name="set_croatian_for_locale">Postavi Hrvatski jezik</string>
+    <string name="set_english_for_locale">Postavi Engleski jezik</string>
 
 </resources>
