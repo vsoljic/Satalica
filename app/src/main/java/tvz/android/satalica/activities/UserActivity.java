@@ -63,5 +63,6 @@ public class UserActivity extends AppCompatActivity {
         intent.putExtra("gameSize", Integer.parseInt(gameSize));
         intent.putExtra("mode", mode);
         startActivity(intent);
+        finish();
     }
 }

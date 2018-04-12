@@ -119,6 +119,7 @@ public class GameActivity extends AppCompatActivity {
                 intent.putExtra("countCorrectAnswer", countCorrectAnswer);
                 intent.putExtra("gameSize", gameSize);
                 startActivity(intent);
+                finish();
             }
         }, 3000);
 

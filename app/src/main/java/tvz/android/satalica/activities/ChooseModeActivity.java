@@ -22,11 +22,13 @@ public class ChooseModeActivity extends AppCompatActivity {
         intent.putExtra("gameSize", 5);
         intent.putExtra("mode", "competitive");
         startActivity(intent);
+        finish();
     }
 
     public void startLearningMode(View view) {
         Intent intent = new Intent(this, UserActivity.class);
         intent.putExtra("mode", "learning");
         startActivity(intent);
+        finish();
     }
 }

@@ -63,6 +63,7 @@ public class TutorialActivity extends AppCompatActivity {
                 } else {
                    Intent intent = new Intent(getApplicationContext(), EndTutorialActivity.class);
                    startActivity(intent);
+                   finish();
                 }
             }
         }, 2000);
