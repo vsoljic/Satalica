@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".activities.GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <tvz.android.satalica.view.ClockView
+            android:id="@+id/clock"
+            android:layout_width="325dp"
+            android:layout_height="325dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/clock1_png" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20px">
+
+                <Button
+                    android:id="@+id/answerFourBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="checkSelectedAnswer"
+                    android:text="12:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/answerOneBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="checkSelectedAnswer"
+                    android:text="12:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/answerThreeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:onClick="checkSelectedAnswer"
+                    android:text="12:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/answerTwoBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="128dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:onClick="checkSelectedAnswer"
+                    android:text="12:00"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--Koristiti linear layout jer je jednostavniji i pametniji, ima manje orderanja s kordinatama i bla bla-->
+
+</LinearLayout>
