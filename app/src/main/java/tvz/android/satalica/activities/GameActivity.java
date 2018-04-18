@@ -17,6 +17,7 @@ import tvz.android.satalica.R;
 import tvz.android.satalica.view.ClockView;
 
 public class GameActivity extends AppCompatActivity {
+    public static int DELAY_MILLIS = 3000;
     int hour = 0;
     int minutes = 0;
     String correctAnswer = null;
@@ -45,6 +46,10 @@ public class GameActivity extends AppCompatActivity {
         username = intent.getStringExtra("username");
         gameSize = intent.getIntExtra("gameSize", 5);
         mode = intent.getStringExtra("mode");
+
+        if (mode.equals("competitive")) {
+            DELAY_MILLIS = 1000;
+        }
 
         clockView = findViewById(R.id.clock);
         button1 = findViewById(R.id.answerOneBtn);
@@ -121,7 +126,7 @@ public class GameActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 3000);
+        }, DELAY_MILLIS);
 
     }
 

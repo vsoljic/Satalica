@@ -8,7 +8,7 @@
     <string name="user_name_table">Korisničko ime</string>
     <string name="go_game">Kreni</string>
     <string name="eg_text">Bravo, %1$s! Skupio si %2$d bodova!</string>
-    <string name="eg_text2">%1$s! Odgovorio si %2$s točno!</string>
+    <string name="eg_text2">Odgovorio si %1$s točno!</string>
     <string name="et_text">Uspješno si završio tutorial! Sad zaigraj igru :)</string>
     <string name="back_to_menu">Natrag na izbornik</string>
     <string name="game_size">Broj zadataka:</string>

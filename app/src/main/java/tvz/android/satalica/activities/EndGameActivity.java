@@ -41,7 +41,7 @@ public class EndGameActivity extends AppCompatActivity {
             Button button = findViewById(R.id.egSeeResultsBtn);
             button.setText(getString(R.string.back_to_menu));
             String odgovori = String.format("%d/%d", intent.getIntExtra("countCorrectAnswer", 0), intent.getIntExtra("gameSize", 0));
-            text = resources.getString(R.string.eg_text2, username, odgovori);
+            text = resources.getString(R.string.eg_text2, odgovori);
         }
 
         TextView textView = findViewById(R.id.egTextView);

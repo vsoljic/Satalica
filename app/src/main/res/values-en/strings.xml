@@ -9,7 +9,7 @@
     <string name="user_name_table">Username</string>
     <string name="go_game">Go</string>
     <string name="eg_text">Bravo, %1$s! You collected %2$d points!</string>
-    <string name="eg_text2">%1$s!  You answered %2$s correct!</string>
+    <string name="eg_text2">You answered %1$s correct!</string>
     <string name="et_text">Youve successfully completed a tutorial! Now play a game :)</string>
     <string name="back_to_menu">Back to menu</string>
     <string name="game_size">Number of tasks:</string>

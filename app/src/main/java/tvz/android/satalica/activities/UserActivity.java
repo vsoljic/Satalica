@@ -35,9 +35,6 @@ public class UserActivity extends AppCompatActivity {
             linearLayout.removeView(labelGameSize);
             linearLayout.removeView(inputGameSize);
 
-            /*labelGameSize.setVisibility(View.GONE);
-            inputGameSize.setVisibility(View.GONE);*/
-
             gameSize = Integer.toString(intent.getIntExtra("gameSize", 5));
         } else {
             TextView labelUsername = findViewById(R.id.labelUserName);
@@ -66,18 +63,17 @@ public class UserActivity extends AppCompatActivity {
                 return;
             }
             intent.putExtra("username", username);
-        } else {
+        }
+
+        if (gameSize == null) {
+            EditText inputFieldGameSize = findViewById(R.id.inputGameSize);
+            gameSize = inputFieldGameSize.getText().toString();
             if (gameSize.equals("")) {
                 Toast toast = Toast.makeText(this, "Nisi unio broj zadataka! :(", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
                 return;
             }
-        }
-
-        if (gameSize == null) {
-            EditText inputFieldGameSize = findViewById(R.id.inputGameSize);
-            gameSize = inputFieldGameSize.getText().toString();
         }
 
         intent.putExtra("gameSize", Integer.parseInt(gameSize));
