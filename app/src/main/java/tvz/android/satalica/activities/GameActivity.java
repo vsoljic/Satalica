@@ -115,7 +115,7 @@ public class GameActivity extends AppCompatActivity {
                 long endStopwatch = System.currentTimeMillis();
                 long elapsedTime = (endStopwatch - startStopwatch) / 1000;
 
-                long finalScore = 300 - elapsedTime + (countCorrectAnswer * 20);
+                long finalScore = 100 - elapsedTime + (countCorrectAnswer * 20);
 
                 Intent intent = new Intent(getApplicationContext(), EndGameActivity.class);
                 intent.putExtra("username", username);
