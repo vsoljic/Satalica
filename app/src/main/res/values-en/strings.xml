@@ -4,13 +4,13 @@
     <string name="start_game">Start game</string>
     <string name="results">Results</string>
     <string name="content_desc">Background image</string>
-    <string name="tutorial">Tutorial</string>
+    <string name="tutorial">Learn</string>
     <string name="user_name">Username:</string>
     <string name="user_name_table">Username</string>
     <string name="go_game">Go</string>
     <string name="eg_text">Bravo, %1$s! You collected %2$d points!</string>
     <string name="eg_text2">You answered %1$s correct!</string>
-    <string name="et_text">Youve successfully completed a tutorial! Now play a game :)</string>
+    <string name="et_text">You\'ve successfully completed a tutorial! Now play a game :)</string>
     <string name="back_to_menu">Back to menu</string>
     <string name="game_size">Number of tasks:</string>
     <string name="set_time_on">Set time on:</string>

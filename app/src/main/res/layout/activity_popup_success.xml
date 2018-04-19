@@ -10,16 +10,18 @@
 
     <ImageView
         android:id="@+id/popupSuccessImg"
-        android:layout_width="360dp"
-        android:layout_height="323dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="92dp"
-        android:elevation="10dp"
+        android:contentDescription="@string/content_desc"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clock8_blue" />
+        app:layout_constraintVertical_bias="0.92"
+        app:srcCompat="@drawable/clock8_purple" />
 
 </android.support.constraint.ConstraintLayout>

@@ -49,6 +49,7 @@ public class TutorialActivity extends AppCompatActivity {
 
         if (selectedTime.equals(randomTime)) {
             showToast(inflater, R.layout.activity_popup_success);
+
         } else {
             showToast(inflater, R.layout.activity_popup_failure);
         }
@@ -61,20 +62,20 @@ public class TutorialActivity extends AppCompatActivity {
                     resetTimePicker();
                     enableButton(true);
                 } else {
-                   Intent intent = new Intent(getApplicationContext(), EndTutorialActivity.class);
-                   startActivity(intent);
-                   finish();
+                    Intent intent = new Intent(getApplicationContext(), EndTutorialActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
             }
         }, 2000);
 
     }
 
-    private void showToast(LayoutInflater inflater, int activity_popup_failure) {
-        View layout = inflater.inflate(activity_popup_failure, null);
+    private void showToast(LayoutInflater inflater, int activity_popup) {
+        View layout = inflater.inflate(activity_popup, null);
         Toast toast = new Toast(this);
         toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setGravity(Gravity.FILL, 0, 0);
         toast.setView(layout);
         toast.show();
     }
@@ -91,6 +92,7 @@ public class TutorialActivity extends AppCompatActivity {
     private void resetTimePicker() {
         timePicker.setMinute(0);
         timePicker.setHour(0);
+        timePicker.refreshDrawableState();
     }
 
     private void enableButton(boolean enabled) {
